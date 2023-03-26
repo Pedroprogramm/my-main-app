@@ -1,0 +1,31 @@
+.App-header{
+    margin: auto;
+    display: flex;
+    width: 90%;
+    height: 100px;
+    background-color: bisque;
+    align-items: center;
+}
+.logo {
+    margin-right: auto;
+    margin-left: 20px;
+}
+.header-btn{
+ width: 120px;
+ height: 40px;
+ border-radius: 10px;
+ margin-left: 20px;
+}
+.language{
+    margin-right: 20px;
+}
+ul li {
+    display: none;
+}
+.active-list-item {
+    display: block;
+}
+.active-list-item:hover ul {
+    display: block; 
+}
+    
