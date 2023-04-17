@@ -2,6 +2,8 @@ import { Component} from 'react';
 
 import './main.scss';
 import '../app.scss';
+import CardsCarousel from './cards-carousel/cards-carousel';
+// import FirstSite from './Site1/reactComponent';
 
 
 class Main extends Component {
@@ -24,11 +26,13 @@ class Main extends Component {
                         card.classList.remove('active-back-cards');
                     })
                     cards[index].classList.add('active-back-cards');
+                    // cards[index].classList.remove('back-cards');
                     
                     slides.forEach(item => {
                         item.classList.remove('active-slide')
                     });
                     slides[index].classList.add('active-slide') 
+            // item.indexOf(e.target)
                 }
         } ); 
     }
@@ -78,104 +82,129 @@ class Main extends Component {
                     </h3>
                 </div>
             </div>
+            <CardsCarousel/>
                 <div className='h-center'>
-                    <h2 >Почему стоит выбрать нас</h2>
+                    <h2>Какие сайты мы разрабатываем</h2>
                 </div>
                 <div className='choose-us-main '>
                     <div className='cards-choose'>
                         
-                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
-                            <div className='test-back'></div>
+                        <div className='back-cards active-back-cards' onClick={this.onSlide}>
+                            <div>
                             <div className='item-cards-choose'>
                                 <span className='item-cards-number'>1</span><br/>
-                                <span className='header-item-cards'>Брифинг:</span><br/><br/>
+                                <span className='header-item-cards'>Корпоративный информационный web - сайт</span><br/><br/>
                                 <span className='text-item-cards'>
-                                    на этом этапе мы будем общаться с вами, чтобы узнать все детали вашего проекта и понять ваши требования. 
-                                    Мы поговорим о целях вашей веб-страницы, целевой аудитории, сообщениях, которые вы хотите передать, а 
-                                    также об элементах дизайна и структуре вашей страницы.
+                                создается для предоставления информации о продуктах, услугах, компании, контактах, новостях и других аспектах бизнеса
                                 </span>
                             </div>
+                            </div>
+                            <div className='test-back'></div>
                         </div>
 
-                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                        <div className='back-cards' onClick={this.onSlide}>
+                            
                             <div className='item-cards-choose'>
                                 <span className='item-cards-number'>2</span><br/>
-                                <span className='header-item-cards'>Проектирование:</span><br/><br/>
+                                <span className='header-item-cards'>Корпоративный имидежевый web - сайт</span><br/><br/>
                                 <span className='text-item-cards'>
-                                    на основе информации, полученной на брифинге, мы создадим макет вашей веб-страницы. 
-                                    Вы сможете просмотреть и утвердить макет до того, как мы начнем его реализацию.
+                                создается для укрепления бренда компании, формирования положительного восприятия у целевой аудитории, 
+                                привлечения клиентов, партнеров и инвесторов, а также для установления контактов с представителями СМИ 
+                                и другими организациями.
                                 </span>
                             </div>
+                            <div className='test-back'></div>
                         </div>
 
-                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                        <div className='back-cards' onClick={this.onSlide}>
+                            
                             <div className='item-cards-choose'>
                                 <span className='item-cards-number'>3</span><br/>
-                                <span className='header-item-cards'>Разработка:</span><br/><br/>
+                                <span className='header-item-cards'>Одностраничный сайт</span><br/><br/>
                                 <span className='text-item-cards'>
-                                    когда макет будет утвержден, мы начнем работу над разработкой вашей веб-страницы. Мы 
-                                    используем современные технологии, такие как HTML, CSS и JavaScript, чтобы создать 
-                                    функциональную и качественную веб-страницу. На этом этапе мы также установим хостинг 
-                                    и оптимизируем скорость загрузки страницы.
+                                нужен для простой и быстрой передачи информации о продукте или услуге, представления портфолио, 
+                                сбора заявок и контактной информации, а также для увеличения продаж своего продукта или услуг и удобства пользователей.
                                 </span>
                             </div>
+                            <div className='test-back'></div>
                         </div>
 
-                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                        <div className='back-cards' onClick={this.onSlide}>
+                            
                             <div className='item-cards-choose'>
                                 <span className='item-cards-number'>4</span><br/>
-                                <span className='header-item-cards'>Тестирование:</span><br/><br/>
+                                <span className='header-item-cards'>Сайт - визитка</span><br/><br/>
                                 <span className='text-item-cards'>
-                                    после того, как ваша веб-страница будет готова, мы проведем тестирование, чтобы убедиться, 
-                                    что все работает должным образом. Мы проверим наличие ошибок, скорость загрузки и соответствие 
-                                    кросс-браузерным стандартам.
+                                Как понятно из названия, основная задача данного сайта – представлять данные об объекте. Как правило, 
+                                сайт-визитка имеет достаточно лаконичное, но функциональное оформление. Обычно такой сайт включает в себя несколько 
+                                страниц, на которых размещена основная информация, например, о компании, виды услуг, цены, контакты и пр.
                                 </span>
                             </div>
+                            <div className='test-back'></div>
                         </div>
 
-                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                        <div className='back-cards' onClick={this.onSlide}>
+                            
                             <div className='item-cards-choose'>
                                 <span className='item-cards-number'>5</span><br/>
-                                <span className='header-item-cards'>Оптимизация:</span><br/><br/>
+                                <span className='header-item-cards'>Персональный проект</span><br/><br/>
                                 <span className='text-item-cards'>
-                                    после тестирования мы оптимизируем вашу веб-страницу для улучшения скорости загрузки, 
-                                    улучшения SEO и повышения общей производительности.
+                                Такой сайт может содержать все, что угодно, также нет жестких правил дизайна. Вся информация и оформление направлены на то, 
+                                чтобы максимально полно ознакомить посетителей с тематикой проекта и сайта.
                                 </span>
                             </div>
+                            <div className='test-back'></div>
                         </div>
 
-                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                        <div className='back-cards' onClick={this.onSlide}>
+                            
                             <div className='item-cards-choose'>
                                 <span className='item-cards-number'>6</span><br/>
-                                <span className='header-item-cards'>Поддержка и обслуживание:</span><br/><br/>
+                                <span className='header-item-cards'>Промо - сайт</span><br/><br/>
                                 <span className='text-item-cards'>
-                                    мы не просто создаем сайты, но и обеспечиваем поддержку и обслуживание сайта после его запуска. 
-                                    Мы помогаем нашим клиентам решать любые проблемы и вопросы, связанные с их сайтом, чтобы они могли 
-                                    спокойно заниматься своим бизнесом.
+                                Это сайт созданный специально для продвижения какого-либо товара либо услуги или основного сайта компании. Компаниям 
+                                выгодно создавать новый сайт под ту или иную акцию, так как это позволяет оптимизировать его под рейтинги поисковых машин, 
+                                а значит, привлечь максимальное количество посетителей.
                                 </span>
                             </div>
+                            <div className='test-back'></div>
                         </div>
                     </div>
                     <div className='slides'>
                         <div className='slide-choose active-slide'>
-                            <div className='slide-text'> PRIMER PRIMER PRIMER PRIMER 1 </div>
-                            <img src='/slide1.jpg' alt='business analysis' className='slide-photo'/>
+                            <iframe className="inlineFrameExample"
+                            title="Inline Frame Example"
+                            width="100%"
+                            height="600"
+                            src='Site1/index.html'/> 
+                       </div>
+                        <div className='slide-choose'>
+                            <iframe className="inlineFrameExample"
+                            title="Inline Frame Example"
+                            width="100%"
+                            height="600"
+                            src='Site1/index.html'/> 
                         </div>
                         <div className='slide-choose'>
-                            <div className='slide-text'> PRIMER PRIMER PRIMER PRIMER 2 </div>
-                            <img src='service4.jpg' alt='business analysis' className='slide-photo'/>
+                        <iframe className="inlineFrameExample"
+                            title="Inline Frame Example"
+                            width="100%"
+                            height="600"
+                            src='Site1/index.html'/> 
                         </div>
                         <div className='slide-choose'>
-                            <div className='slide-text'> PRIMER PRIMER PRIMER PRIMER 3 </div>
-                            <img src='service3.jpg' alt='business analysis' className='slide-photo'/>
+                            <iframe className="inlineFrameExample"
+                            title="Inline Frame Example"
+                            width="100%"
+                            height="600"
+                            src='Site4/index.html'/> 
                         </div>
                         <div className='slide-choose'>
-                            <div className='slide-text'> PRIMER PRIMER PRIMER PRIMER 4 </div>
-                            <img src='service3.jpg' alt='business analysis' className='slide-photo'/>
-                        </div>
-                        <div className='slide-choose'>
-                            <div className='slide-text'> PRIMER PRIMER PRIMER PRIMER 5 </div>
-                            <img src='service3.jpg' alt='business analysis' className='slide-photo'/>
+                        <iframe className="inlineFrameExample"
+                            title="Inline Frame Example"
+                            width="100%"
+                            height="600"
+                            src='Site3/index.html'/>
                         </div>
                         <div className='slide-choose'>
                             <div className='slide-text'> PRIMER PRIMER PRIMER PRIMER 6 </div>
@@ -330,7 +359,90 @@ class Main extends Component {
                                 Поддержка: после публикации мы поддерживаем вашу веб-страницу, обновляем ее контент и исправляем ошибки, которые могут возникнуть.
                                 </span>
                             </div>
-                        </div> */}
+                        </div> 
+                        <div className='back-cards active-back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                            <div>
+                            <div className='item-cards-choose'>
+                                <span className='item-cards-number'>1</span><br/>
+                                <span className='header-item-cards'>Брифинг:</span><br/><br/>
+                                <span className='text-item-cards'>
+                                    на этом этапе мы будем общаться с вами, чтобы узнать все детали вашего проекта и понять ваши требования. 
+                                    Мы поговорим о целях вашей веб-страницы, целевой аудитории, сообщениях, которые вы хотите передать, а 
+                                    также об элементах дизайна и структуре вашей страницы.
+                                </span>
+                            </div>
+                            </div>
+                            <div className='test-back'></div>
+                        </div>
+
+                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                            
+                            <div className='item-cards-choose'>
+                                <span className='item-cards-number'>2</span><br/>
+                                <span className='header-item-cards'>Проектирование:</span><br/><br/>
+                                <span className='text-item-cards'>
+                                    на основе информации, полученной на брифинге, мы создадим макет вашей веб-страницы. 
+                                    Вы сможете просмотреть и утвердить макет до того, как мы начнем его реализацию.
+                                </span>
+                            </div>
+                            <div className='test-back'></div>
+                        </div>
+
+                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                            
+                            <div className='item-cards-choose'>
+                                <span className='item-cards-number'>3</span><br/>
+                                <span className='header-item-cards'>Разработка:</span><br/><br/>
+                                <span className='text-item-cards'>
+                                    когда макет будет утвержден, мы начнем работу над разработкой вашей веб-страницы. Мы 
+                                    используем современные технологии, такие как HTML, CSS и JavaScript, чтобы создать 
+                                    функциональную и качественную веб-страницу. На этом этапе мы также установим хостинг 
+                                    и оптимизируем скорость загрузки страницы.
+                                </span>
+                            </div>
+                            <div className='test-back'></div>
+                        </div>
+
+                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                            
+                            <div className='item-cards-choose'>
+                                <span className='item-cards-number'>4</span><br/>
+                                <span className='header-item-cards'>Тестирование:</span><br/><br/>
+                                <span className='text-item-cards'>
+                                    после того, как ваша веб-страница будет готова, мы проведем тестирование, чтобы убедиться, 
+                                    что все работает должным образом. Мы проверим наличие ошибок, скорость загрузки и соответствие 
+                                    кросс-браузерным стандартам.
+                                </span>
+                            </div>
+                            <div className='test-back'></div>
+                        </div>
+
+                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                            
+                            <div className='item-cards-choose'>
+                                <span className='item-cards-number'>5</span><br/>
+                                <span className='header-item-cards'>Оптимизация:</span><br/><br/>
+                                <span className='text-item-cards'>
+                                    после тестирования мы оптимизируем вашу веб-страницу для улучшения скорости загрузки, 
+                                    улучшения SEO и повышения общей производительности.
+                                </span>
+                            </div>
+                            <div className='test-back'></div>
+                        </div>
+
+                        <div className='back-cards' onClick={this.onSlide} onMouseEnter={this.onSlide} onMouseLeave={this.onSlide}>
+                            
+                            <div className='item-cards-choose'>
+                                <span className='item-cards-number'>6</span><br/>
+                                <span className='header-item-cards'>Поддержка и обслуживание:</span><br/><br/>
+                                <span className='text-item-cards'>
+                                    мы не просто создаем сайты, но и обеспечиваем поддержку и обслуживание сайта после его запуска. 
+                                    Мы помогаем нашим клиентам решать любые проблемы и вопросы, связанные с их сайтом, чтобы они могли 
+                                    спокойно заниматься своим бизнесом.
+                                </span>
+                            </div>
+                            <div className='test-back'></div>
+                        </div>*/}
         </main>
     );
     }

@@ -81,15 +81,6 @@ class Header extends Component {
                     <div className='hover-text-header'>Связаться с нами</div>
                     <div className='social-backgound'></div>
                 </a>
-                {/* <ul >
-                    <li className='active-list-item'>Social</li>
-                        <ul className='hovers'>
-                        <li>Telegram</li>
-                        <li>Instagram</li>
-                        <li>Facebook</li>
-                        <li>WhatsApp</li>
-                        </ul>
-                </ul> */}
                 <div className='nav-social' onMouseEnter={this.onBtnMenuEnter} onMouseLeave={this.onBtnMenuLeave}>
                     <div className='btn header-btn social'>
                         <div className='static-text-header '>Social Media</div>

@@ -1,0 +1,101 @@
+.cards-carousel{
+    display: flex;
+    width: 100%;
+    height: 440px;
+}
+.item-cards-carousel{
+    // min-width: 275px;
+    width: 275px;
+    height: 367px;
+    min-height: 367px;
+    // border-radius: 20px;
+    // border: 2px solid black;
+    // margin-right: 3.2%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition-duration: 300ms;
+}
+.item-cards-carousel:hover {
+    transform: scale(1.05);
+}
+.item-cards-carousel:hover .background-cards-corousel {
+    background-position: 50% 150%;
+    color: black;
+}
+.item-cards-carousel:hover .header-cards-carousel {
+    background-position: 50% 90%;
+    color: #fff;
+}
+.header-cards-carousel{
+    border: 2px solid black;
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    font-size: 25px;
+    background-image: linear-gradient(#fff 50%,#3365A6 0);
+    background-size: 300% 300%;
+    background-position: 50% 10%;
+    transition-duration: 300ms;
+    border-radius: 17px 17px 0 0;
+}
+.background-cards-corousel{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(#fff 50%,#3365A6 0);
+    background-size: 300% 300%;
+    background-position: 50% 90%;
+    border-radius: 0 0 17px 17px;
+    border: 2px solid black;
+    border-top: 0px;
+    color: #fff;
+    text-align: center;
+    transition-duration: 300ms;
+}
+.text-cards-corousel{
+    margin-right: 15px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hidden-right-carousel{
+    width: 0;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    margin: 0;
+}
+.hidden-left-carousel{
+    width: 0;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.left-pointer-carousel{
+    // margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    height: 327px;
+}
+.left-pointer-carousel svg{
+    width: 45px;
+}
+.right-pointer-carousel{
+    margin-right: auto;
+    // margin-left: auto;
+    display: flex;
+    align-items: center;
+    height: 327px;
+}
+.right-pointer-carousel svg{
+    width: 45px;
+}
