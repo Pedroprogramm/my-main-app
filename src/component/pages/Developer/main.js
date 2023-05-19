@@ -1,8 +1,8 @@
 import { Component} from 'react';
 
 import './main.scss';
-import '../app.scss';
 import CardsCarousel from './cards-carousel/cards-carousel';
+import CallUs from './call-us/callUs';
 // import FirstSite from './Site1/reactComponent';
 
 
@@ -68,7 +68,7 @@ class Main extends Component {
                     </video>
                 </div>
                 <div className='head-main-content'>
-                    <h1>Создаем сайты</h1>
+                    <h1>Создаем сайты <a href="#page-1">1</a></h1>
                     <h3>Мы предлагаем услуги по созданию уникальных и современных сайтов для вашего бизнеса.
                         Наша команда профессиональных веб-разработчиков готова создать сайт любой сложности - от
                         простых лендингов до сложных корпоративных сайтов и интернет-магазинов. Мы работаем индивидуально 
@@ -83,6 +83,7 @@ class Main extends Component {
                 </div>
             </div>
             <CardsCarousel/>
+            <CallUs/>
                 <div className='h-center'>
                     <h2>Какие сайты мы разрабатываем</h2>
                 </div>
@@ -150,7 +151,7 @@ class Main extends Component {
                                 <span className='header-item-cards'>Персональный проект</span><br/><br/>
                                 <span className='text-item-cards'>
                                 Такой сайт может содержать все, что угодно, также нет жестких правил дизайна. Вся информация и оформление направлены на то, 
-                                чтобы максимально полно ознакомить посетителей с тематикой проекта и сайта.
+                                чтобы максимально полно ознакомить посетителей с тематикой проекта <br/>и сайта.
                                 </span>
                             </div>
                             <div className='test-back'></div>
@@ -175,7 +176,7 @@ class Main extends Component {
                             <iframe className="inlineFrameExample"
                             title="Inline Frame Example"
                             width="100%"
-                            height="600"
+                            height="100%"
                             src='Site1/index.html'/> 
                        </div>
                         <div className='slide-choose'>
@@ -204,7 +205,9 @@ class Main extends Component {
                             title="Inline Frame Example"
                             width="100%"
                             height="600"
-                            src='Site3/index.html'/>
+                            src='Site3/index.html'
+                                // onLoad={}
+                            />
                         </div>
                         <div className='slide-choose'>
                             <div className='slide-text'> PRIMER PRIMER PRIMER PRIMER 6 </div>
@@ -225,7 +228,7 @@ class Main extends Component {
                 <div className='h-center'>
                     <h2>Какие услуги мы предлагаем</h2>
                 </div>
-                <div className='cards-service'  >
+                <div className='cards-service' id="page-1" >
                     <div className='item-cards-service programm' onMouseEnter={this.onOurProjectE} onMouseLeave={this.onOurProjectL}>
                         <div className='rewriting-card' >
                             <div className='background-text-service'>

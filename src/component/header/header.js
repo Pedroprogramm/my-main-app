@@ -8,11 +8,27 @@ class Header extends Component {
         super(props);
         this.state = {
             language: 'Ru',
-        }
+      };
     }
 
+    componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    const scrollTop = window.pageYOffset;
+    if (scrollTop > 140) {
+    document.querySelector('.App-header').classList.add('white-header');
+    } else {
+    document.querySelector('.App-header').classList.remove('white-header');
+    }
+  }
     onBtnMenuEnter = (e) => {
-        if (e.target.classList.contains('nav-social') || e.target.classList.contains('social')){
+        if (e.target.classList.contains('social')){
             const btn = document.querySelector('.social-group');
             btn.classList.add('social-active');
         }
@@ -23,7 +39,7 @@ class Header extends Component {
     }
     
     onBtnMenuLeave = (e) =>{
-        if (e.target.classList.contains('nav-social') || e.target.classList.contains('social-active') || e.target.classList.contains('language')){
+        if (e.target.classList.contains('nav-social') || e.target.classList.contains('social') || e.target.classList.contains('language')){
             const btn = document.querySelector('.social-group');
             btn.classList.remove('social-active');
         }
@@ -50,7 +66,7 @@ class Header extends Component {
                   menuUnactive = document.querySelector('#menu-unactive'),
                   menuActive = document.querySelector('#menu-active');
                 //   html = document.querySelector('html');
-                
+                function openCloseMenu() {
                 menu.classList.toggle('active-main-menu');
                 menuBackground.classList.toggle('active-menu-background');
 
@@ -62,6 +78,9 @@ class Header extends Component {
 
                 btnMenu.classList.toggle('menu-curcle-x');
                 btnMenu.classList.toggle('btn');
+                }
+                openCloseMenu();
+                
                 // if (menuBackground.classList.contains('active-menu-background')){
                 //     html.style.overflow = ('hidden');
                 // } else {
@@ -71,33 +90,43 @@ class Header extends Component {
     }
 
    render () { 
+    const { isScrolled } = this.state;
+    // const menuStyle = isScrolled ? { backgroundColor: 'white', border: 'none', width: '100%' } : { backgroundColor: 'transparent' };
     return (
-        <header className="App-header">
-            <a className='logo' href='12'>
+        <header className="App-header" onScroll={this.handleScroll} 
+        // style={menuStyle}
+        >
+            <a className='logo' href='/'>
                 <img src='logo.svg' alt='logo-project-x'/>
             </a>
-                <a href='12' className='btn header-btn weCallYou'>
-                    <div className='static-text-header '>Связаться с нами</div>
+                <a href='/contact' className='btn header-btn weCallYou'>
+                    <div className='static-text-header'>Связаться с нами</div>
                     <div className='hover-text-header'>Связаться с нами</div>
                     <div className='social-backgound'></div>
                 </a>
-                <div className='nav-social' onMouseEnter={this.onBtnMenuEnter} onMouseLeave={this.onBtnMenuLeave}>
-                    <div className='btn header-btn social'>
+                <div className='nav-social' >
+                    <div className='btn header-btn social' 
+                    // onMouseEnter={this.onBtnMenuEnter} onMouseLeave={this.onBtnMenuLeave}
+                    >
                         <div className='static-text-header '>Social Media</div>
                         <div className='hover-text-header'>Social Media</div>
                         <div className='social-backgound'></div>
                     </div>
                     <div className='social-group'>  
                         <ul>
-                            <li><a href='231'>Telegram</a></li>
-                            <li><a href='13'>Instagram</a></li>
+                            <li><a href='https://web.telegram.org/k/#@youndfound'>Telegram</a></li>
+                            <li><a href='/develop'>Instagram</a></li>
                             <li><a href='213'>Facebook</a></li>
                             <li><a href='123'>WhatsApp</a></li>
                         </ul>
                     </div>
                 </div>
-                <div className='nav-languages' onMouseEnter={this.onBtnMenuEnter} onMouseLeave={this.onBtnMenuLeave}>
-                    <div className='btn btn-curcle language'>
+                <div className='nav-languages' 
+                // onMouseLeave={this.onBtnMenuLeave}
+                >
+                    <div className='btn btn-curcle language' 
+                    // onMouseEnter={this.onBtnMenuEnter} onMouseLeave={this.onBtnMenuLeave}
+                    >
                         <div className='static-text-header '>{this.state.language}</div>
                         <div className='hover-text-header'>{this.state.language}</div>
                         <div className='social-backgound'></div>
@@ -125,7 +154,7 @@ class Header extends Component {
                         </span>
                         <span className='socials-text-menu'>
                             <img className='icons-social' src="telegram.png" alt="telegram-icon" />
-                            <a href='12' >
+                            <a href='https://web.telegram.org/k/#@youndfound' >
                                 <div className='static-social-menu'> Telegram</div>
                                 <div className='hover-social-menu telegram-color'>Telegram</div>
                             </a>
@@ -160,7 +189,7 @@ class Header extends Component {
                         </span>
                     </div>
                     <div className='menu-services'>
-                            <a href='21' className='service-text-menu'>Главная
+                            <a href='/' className='service-text-menu'>Главная
                                 <span className='a-border-line'></span>
                             </a>
                             <a href='21' className='service-text-menu'>Услуги

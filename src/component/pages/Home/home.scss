@@ -1,0 +1,467 @@
+.purple-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    border-radius: 0 0 90% 90%;
+    background-color: #9574FA;
+    z-index: -1;
+}
+.black-square{
+    height: 640px;
+    width: 70%;
+    margin: auto;
+    margin-top: 150px;
+    background-color: #050010;
+    border-radius: 70px;
+    border: 10px solid #524E59;
+    color: #ffffff;
+}
+.header-text-square{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 700px;
+    margin-top: 30px;
+    font-size: 40px;
+    font-family: 'User Stencil Bold Cameo';
+}
+.text-square{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 800px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.cards-home-container{
+    display: flex;
+    margin-top: 40px;
+    padding-right: 90px;
+    padding-left: 90px;
+}
+.cards-home{
+    margin-right: auto;
+    margin-left: auto;
+    width: 20%;
+    height: 250px;
+    border-radius: 40px;
+    box-shadow: 0 0 2px 1px rgb(230, 230, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 500ms;
+}
+.cards-home:nth-child(odd){
+    transform: rotate(-4deg);
+}
+.cards-home:nth-child(even){
+    transform: rotate(+4deg);
+}
+.frst{   
+    border: 2px solid #E8FF2C;
+}
+.sec{
+    border: 2px solid #FEBF21;
+}
+.three{
+    border: 2px solid #A06DFF;
+}
+.four{
+    border: 2px solid #FFC0EA;
+}
+.hover-text-home{
+    color: #050010;
+    position: absolute;
+    top: 30%;
+    opacity: 0;
+    font-size: 25px;
+}
+.cards-home:hover  .hover-text-home{
+    opacity: 1;
+}
+
+.frst:hover{
+    background-color: #E8FF2C;
+}
+.frst:hover .hover-icons-cards{
+    opacity: 1;
+    
+    animation-name: shield;
+}
+@keyframes shield {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.frst:hover .briefcase{
+    opacity: 1;
+}
+.hover-icons-cards{
+    position: absolute;
+    height: 36px;
+    opacity: 0;
+    animation: 600ms infinite linear ;
+    // transition-duration: 300ms;
+}
+.briefcase{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+}
+.shield1{
+    bottom: 10%;
+    left: calc(50% - 18px);
+    animation-delay: 0ms;
+}
+.shield2{
+    left: 10%;
+    top: 51%;
+    animation-delay: 110ms;
+}
+.shield3{
+    right: 10%;
+    top: 51%;
+    animation-delay: 220ms;
+}
+.shield4{
+    top: 15%;
+    left: 17%;
+    animation-delay: 330ms;
+}
+.shield5{
+    right: 17%;
+    top: 15%;
+    animation-delay: 440ms;
+
+}
+
+
+.sec:hover{
+    background-color: #FEBF21;
+}
+.sec:hover .flash-dotts{
+    animation-name: flash;
+    // animation: 650ms infinite linear  flash;
+}
+@keyframes flash {
+    0%{
+        opacity: 1;
+        left: -25px;
+    }
+    100% {
+        opacity: 1;
+        left: 102%;
+    }
+}
+.flash-dotts{
+    transform: rotate(-131deg) ;
+    height: 20px;   
+    position: absolute;
+    opacity: 0;
+}
+.first-dott{
+    animation: 600ms 0ms infinite linear ;
+    top: 15px;
+}
+.second-dott{
+    animation: 650ms 240ms infinite linear ;
+    top: 45px;
+}
+.third-dott{
+    animation: 700ms 90ms infinite linear ;
+    top: 125px;
+}
+.fourth-dott{
+    animation: 600ms 320ms infinite linear ;
+    top: 155px;
+}
+.fifth-dott{
+    animation: 680ms 172ms infinite linear ;
+    top: 175px;
+}
+.sixth-dott{
+    animation: 750ms 25ms infinite linear ;
+    top: 215px;
+}
+
+.three:hover{
+    background-color: #A06DFF;
+}
+.three:hover .like-cards-home {
+    animation-name: like;
+}
+@keyframes like {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    16%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    32%{
+        opacity: 1;
+        transform: scale(0);
+    }
+    33%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    49%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    65%{
+        opacity: 1;
+        transform: scale(0);
+        position: absolute;
+        top: var(--like-top-first);
+        right: var(--like-left-first);
+    }
+    66%{
+        opacity: 0;
+        transform: scale(0);
+        position: absolute;
+        top: var(--like-top-sec);
+        right: var(--like-left-sec);
+    }
+    82%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(0);
+        position: absolute;
+        top: var(--like-top-sec);
+        right: var(--like-left-sec);
+    }
+}
+.like-cards-home{
+    position: absolute;
+    transform-origin: bottom center;
+    height: 35px;
+    animation: 4550ms infinite linear;
+    opacity: 0;
+    // transition-duration: 1700ms;
+    // transform: scaleY(0);
+}
+.first-like{
+    left: 20%;
+    bottom: 7%;
+    --like-left-first: 10%; 
+    --like-top-first: 65%; 
+    --like-left-sec: 23%;
+    --like-top-sec: 16%;
+    animation-delay: 300ms;
+}
+.second-like{
+    left: 36.6%;
+    bottom: 21%;
+    --first-like: 10%;
+    --like-left-first: 11%; 
+    --like-top-first: 19%; 
+    --like-left-sec: 68%;
+    --like-top-sec: 12%;
+    animation-delay: 0ms;
+}
+.third-like{
+    left: 53.2%;
+    bottom: 84%;
+    --like-left-first: 20%; 
+    --like-top-first: 45%; 
+    --like-left-sec: 61%;
+    --like-top-sec: 53%;
+    animation-delay: 500ms;
+}
+.fourth-like{
+    left: 80%;
+    bottom: 41%;
+    --like-left-first: 15%; 
+    --like-top-first: 52%; 
+    --like-left-sec: 55%;
+    --like-top-sec: 80%;
+    animation-delay: 100ms;
+}
+.fifth-like{
+    left: 11%;
+    bottom: 37%;
+    --like-left-first: 27%; 
+    --like-top-first: 73%; 
+    --like-left-sec: 72%;
+    --like-top-sec: 40%;
+    animation-delay: 240ms;
+}
+.sixth-like{
+    left: 10%;
+    bottom: 80%;
+    --like-left-first: 44%; 
+    --like-top-first: 13%; 
+    --like-left-sec: 62%;
+    --like-top-sec: 84%;
+    animation-delay: 700ms;
+}
+
+.four:hover{
+    background-color: #FFC0EA;
+}
+.four:hover .coins-animate{
+    animation-name: coins-animate;
+}
+@keyframes coins-animate {
+    0%{
+        opacity: 1;
+        top: -10%;
+    }
+    60%{
+        opacity: 1;
+        top: 95%;
+    }
+    75%{
+        top: 70%;
+        // left: 50%;
+    }
+    100%{
+        top: 110%;
+    }
+}
+.coins-animate{
+    opacity: 0;
+    position: absolute;
+    width: 20px;
+}
+.first-coin{
+    left: 5%;
+    animation: 1910ms 350ms infinite linear ;
+}
+.second-coin{
+    left: 15%;
+    animation: 1750ms 0ms infinite linear ;
+}
+.third-coin{
+    left: 37%;
+    animation: 1830ms 600ms infinite linear ;
+}
+.fourth-coin{
+    left: 55%;
+    animation: 1740ms 330ms infinite linear ;
+}
+.fifth-coin{
+    left: 70%;
+    animation: 1800ms 80ms infinite linear ;
+}
+.sixth-coin{
+    left: 88%;
+    animation: 1870ms 135ms infinite linear ;
+}
+
+.header-service{
+    height: 100px;
+    width: 500px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 30px;
+    
+}
+.text-service{
+    width: 600px;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    text-align: center;
+}
+.our-services-item{
+    display: flex;
+    flex-wrap: wrap;
+}
+.our-services-card{
+    max-height: 200px;
+    transition-duration: 250ms;
+    border-radius: 30px;
+    padding: 25px;
+    width: 29%;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+}
+.our-services-card:hover{
+    box-shadow: 0 0 25px rgb(230, 230, 230);
+}
+.our-services-card:hover .open-service-card{
+    opacity: 1;
+}
+.open-service-card{
+    width: 21px;
+    margin-left: 35px;
+    margin-top: 5px;
+    position: absolute;
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.our-services-card:nth-child(2){
+    margin-top: 40px;
+}
+.our-services-card:nth-child(3){
+    margin-top: 80px;
+}
+.our-services-card:nth-child(5){
+    margin-top: 40px;
+}
+.our-services-card:nth-child(6){
+    margin-top: 80px;
+}
+.circle-item-cards{
+    width: 48px;
+    height: 48px;
+    border-radius: 50% 50% 45% 55% / 50% 53% 47% 50% ;
+    padding-left: 2px;
+    padding-top: 2px;
+    box-shadow: 0 0 2px 1px rgb(230, 230, 230);
+}
+.circle-web-development{
+    background-color: #9574FA;
+}
+.circle-paint-palette{
+    background-color: #FFC10D;
+}
+.circle-ui-design{
+    background-color: #50ACFF;
+}
+.circle-targeted-marketing{
+    background-color: #00ABA4;
+}
+.circle-contextual-advertising{
+    background-color: #FEABE3;
+}
+.circle-social-media{
+    background-color: #FF6471;
+}
+.circle-white-cards{
+    width: 45px;
+    height: 45px;
+    border-radius: 999px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.serhice-card-text{
+    font-size: 15px;
+    color: #524E59;
+}
+.service-header-text{
+    font-size: 19px;
+    color: #050010;
+}

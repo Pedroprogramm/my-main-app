@@ -1,5 +1,6 @@
 .cards-carousel{
     display: flex;
+    justify-content: space-evenly;
     width: 100%;
     height: 440px;
 }
@@ -8,6 +9,7 @@
     width: 275px;
     height: 367px;
     min-height: 367px;
+    max-height: 367px;
     // border-radius: 20px;
     // border: 2px solid black;
     // margin-right: 3.2%;
@@ -16,7 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition-duration: 300ms;
+    transition-duration: 500ms;
 }
 .item-cards-carousel:hover {
     transform: scale(1.05);
@@ -32,9 +34,10 @@
 .header-cards-carousel{
     border: 2px solid black;
     width: 100%;
-    min-height: 50px;
+    min-height: 65px;
+    text-align: center;
     display: flex;
-    align-self: center;
+    // align-self: center;
     justify-content: center;
     font-size: 25px;
     background-image: linear-gradient(#fff 50%,#3365A6 0);
@@ -56,46 +59,68 @@
     border: 2px solid black;
     border-top: 0px;
     color: #fff;
-    text-align: center;
     transition-duration: 300ms;
 }
 .text-cards-corousel{
     margin-right: 15px;
     margin-left: 15px;
+    // height: 75%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
+    transform: scaleX(1);
+    max-height: 297px;
 }
 .hidden-right-carousel{
     width: 0;
-    height: 100%;
+    height: 367px;
+    max-height: 367px;
+    // height: 100%;
     transform: scaleX(0);
+    // transform: scaleY(0);
     transform-origin: right;
     margin: 0;
+    z-index: -1;
 }
 .hidden-left-carousel{
+    max-height: 367px;
     width: 0;
-    height: 100%;
+    height: 367px;
+    // height: 100%;
     transform: scaleX(0);
+    // transform: scaleY(0);
     transform-origin: left;
+    margin: 0;
+    z-index: -1;
+    
+}
+.hidden-text-corousel{
+    transform: scalex(0);
+    transition-duration: 300ms;
+    max-height: 297px;
 }
 .left-pointer-carousel{
-    // margin-right: auto;
+    margin-right: auto;
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+    height: 327px;
+    z-index: 1;
+    
+}
+.left-pointer-carousel svg{
+    width: 45px;
+    cursor: pointer;
+}
+.right-pointer-carousel{
+    margin-right: 60px;
     margin-left: auto;
     display: flex;
     align-items: center;
     height: 327px;
-}
-.left-pointer-carousel svg{
-    width: 45px;
-}
-.right-pointer-carousel{
-    margin-right: auto;
-    // margin-left: auto;
-    display: flex;
-    align-items: center;
-    height: 327px;
+
 }
 .right-pointer-carousel svg{
     width: 45px;
+    cursor: pointer;
 }
