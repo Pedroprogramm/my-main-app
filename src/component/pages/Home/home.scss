@@ -465,3 +465,144 @@
     font-size: 19px;
     color: #050010;
 }
+.faq{
+    width: 100%;
+}
+.header-faq{
+    display: flex;
+    align-items: center;
+}
+.faq-header{
+    color: #FEBF21;
+    font-size: 40px;
+}
+.show-answers{
+    margin-left: 70px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.faq-main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: stretch;
+}
+.faq-section{
+    margin-right: auto;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding-right: 25px;
+}
+.question{
+    padding: 10px;
+    padding-bottom: 15px;
+    background-color: #acacac;
+    border-radius: 20px;
+    width: 80%;
+    position: relative;
+}
+  .question::before {
+    content: "";
+    position: absolute;
+    bottom: 3%;
+    left: 0px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #acacac transparent;
+    // transform: rotate(45deg);
+    transform-origin: 100% 0;
+  }
+  .faq-down-arrow{
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    transition-duration: 200ms;
+  }
+  .faq-arrow-active{
+    transform: rotate(-180deg);
+    transition-duration: 200ms;
+}
+.answer{
+    margin-left: auto;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: #acacac;
+    border-radius: 20px;
+    position: relative;
+    transition-duration: 600ms;
+    transform: scaleY(1);
+    transform-origin: top;
+}
+.answer::after {
+    content: "";
+    position: absolute;
+    bottom: 3%;
+    right: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #acacac transparent;
+    transform-origin: 100% 0;
+  }
+.answer-hidden{
+    transform: scaleY(0);
+    height: 0%;
+    max-height: 0px;
+    overflow: hidden;
+}
+.reviews-cards{
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+.reviews-card-item{
+    width: 40%;
+    box-shadow: 0 0 25px rgb(230, 230, 230);
+    padding: 20px;
+}
+.reviews-card-header{
+    display: flex;
+    
+}
+.reviesws-card-photo{
+    width: 60px;
+    // height: 60px;
+    border-radius: 150px;
+    box-shadow: 0 0 25px rgb(230, 230, 230);
+}
+.reviews-card-text{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.reviews-about-service{
+    color: #050010;
+}
+.circle-home-reviews{
+    display: flex;
+    justify-content: center;
+}
+.circle-item-reviews{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 1px solid black;
+    margin-right: 10px;
+}
+.active-circle-reviews{
+    background-color: purple;
+}
+.arrow-reviews{
+    height: 40px;
+}
+.arrow-reviews:hover{
+    background-image: url(../../../../public/home/arrow-reviews.png);
+    background-size: contain;
+}
+.left-arrow-reviews{
+    transform: rotate(-180deg);
+}
+

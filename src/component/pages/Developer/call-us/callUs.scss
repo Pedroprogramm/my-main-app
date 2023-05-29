@@ -46,6 +46,7 @@
     -webkit-animation: lefts 2s linear infinite;
     animation: lefts 20s linear infinite;
     animation-delay: 0s;
+    max-height: 50px;
 }
 
 @-moz-keyframes scroll-left {

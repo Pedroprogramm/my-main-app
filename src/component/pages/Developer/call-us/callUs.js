@@ -37,17 +37,17 @@ export default CallUs;
 // const CallUs = () => {
 //   const [scrollTop, setScrollTop] = useState(0);
 
-//   useEffect(() => {
-//     const handleScroll = event => {
-//       setScrollTop(window.scrollY);
-//     };
+  // useEffect(() => {
+  //   const handleScroll = event => {
+  //     setScrollTop(window.scrollY);
+  //   };
 
-//     window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-//     return () => {
-//       window.removeEventListener('scroll', handleScroll);
-//     };
-//   }, []);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
 //   return (
 //     <div>
