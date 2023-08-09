@@ -2,23 +2,56 @@ import React from 'react';
 import { Component} from 'react';
 
 import './home.scss';
+import './scrollAnimate.scss';
 import CallUs from '../Developer/call-us/callUs';
+import Rewiews from '../../rewiews/rewiews';
+import OurProject from '../../project/project';
  
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded : false,
+      sExpanded : false,
+      isLoaded: false
     }
   }
 
   componentDidMount() {
     this.updateAnswers();
+    window.addEventListener('scroll', this.animateServices);
   }
-
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.animateServices);
+  }
   componentDidUpdate() {
     this.updateAnswers();
   }
+
+  animateServices() {
+    const scroll = window.pageYOffset
+    const item = document.querySelectorAll('.our-services-card');
+    if (scroll > 387) {
+      item.forEach((item, index) => {
+        if (index < 3){
+          item.classList.add('animate-services-card');
+        }
+      })
+    } 
+    if (scroll > 697) {
+      item.forEach((item, index) => {
+        if (index >= 3){
+          item.classList.add('animate-services-card');
+        }
+      })
+    }
+    console.log(scroll)
+  }
+
+  // updateOpacity() {
+  //   const sqare = document.querySelector(`.black-square`),
+  //         insqare = document.querySelector(`.cards-home`);
+  //   // setTimeout sqare.style.opacity = 0;
+  // }
 
   updateAnswers() {
     const hiddenAnswer = document.querySelectorAll('.answer-hidden');
@@ -36,26 +69,40 @@ class Home extends Component {
     // console.log('1');
   }
 
+  
+
   onClickAnswers (e) {
     const quest = document.querySelectorAll('.question');
     const answer = document.querySelectorAll('.answer'),
     arrow = document.querySelectorAll('.faq-down-arrow');
-    quest.forEach((item, index) => {
-      if (item === e.target) {
-        arrow[index].classList.toggle('faq-arrow-active');
-        answer[index].classList.toggle('answer-hidden')
-      }
-    })
+    function answerSearch (item) {
+      item.forEach((item, index) => {
+        if (item === e.target) {
+          arrow[index].classList.toggle('faq-arrow-active');
+          answer[index].classList.toggle('answer-hidden')
+          console.log(index)
+        }
+      })
+     }
+    if(e.target.classList.contains('question')){
+      answerSearch(quest);
+    } else if(e.target.classList.contains('faq-down-arrow')) {
+      answerSearch(arrow)
+    }
+    
   }
 
   onVisHiddAnswer () {
     const allAnswer = document.querySelectorAll('.answer'),
     hiddenAnswer = document.querySelectorAll('.answer-hidden');
     const showAnswers = document.querySelector('.show-answers');
+    allAnswer.forEach(item => {
+      item.classList.toggle('answer-hidden');
+    })
     if (hiddenAnswer.length === 0) {
-      showAnswers.innerHTML = 'Свернуть все ответы';
-    } else {
       showAnswers.innerHTML = 'Развернуть все ответы';
+    } else {
+      showAnswers.innerHTML = 'Свернуть все ответы';
     }
   }
 
@@ -63,7 +110,7 @@ render () {
   return (
     <>
       <div className='purple-back'></div>
-      <div className='black-square'>
+      <div className='black-square animate-test'>
         <div className='header-text-square'>
           <strong>Добейтесь большего успеха: продвигайте свой бизнес в интернете с профессионалами</strong>
         </div>
@@ -229,7 +276,7 @@ render () {
             <div className='faq-developer-section faq-section'>
               <div className='question' onClick={this.onClickAnswers}>
               Сколько времени занимает разработка сайта?
-              <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+              <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
               </div>
               <div className='answer answer-hidden'>
               Время разработки сайта зависит от сложности проекта и его требований. 
@@ -240,7 +287,7 @@ render () {
           
               <div className='question' onClick={this.onClickAnswers}>
               Предоставляете ли вы поддержку и обслуживание сайта после его разработки?
-              <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+              <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
               </div>
               <div className='answer answer-hidden'>
               Да, мы предоставляем услуги по поддержке и обслуживанию сайтов
@@ -248,7 +295,7 @@ render () {
               
               <div className='question' onClick={this.onClickAnswers}>
               Какова стоимость разработки сайта?
-              <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+              <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
               </div>
               <div className='answer answer-hidden'>
               Стоимость разработки сайта зависит от множества факторов, включая его размер, сложность функционала, 
@@ -262,7 +309,7 @@ render () {
 
             <div className='question-smm question' onClick={this.onClickAnswers}>
             Какой эффект может дать профессиональное оформление моего профиля в Инстаграме?
-            <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+            <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
             </div>
             <div className='answer answer-hidden'>
             Профессиональное оформление профиля в Инстаграме помогает создать привлекательный и согласованный образ 
@@ -272,7 +319,7 @@ render () {
 
             <div className='question-smm question' onClick={this.onClickAnswers}>
             Можете ли вы предоставить мне исходные файлы после оформления профиля?
-            <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+            <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
             </div>
             <div className='answer answer-hidden'>
             Да, по вашему запросу мы можем предоставить вам исходные файлы, такие как логотипы, обложки профиля и другие элементы дизайна. 
@@ -281,7 +328,7 @@ render () {
 
             <div className='question-smm question' onClick={this.onClickAnswers}>
             Как часто мне нужно обновлять контент на моем инстаграме?
-            <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+            <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
             </div>
             <div className='answer answer-hidden'>
             Регулярное обновление контента важно для поддержания активности и привлечения внимания вашей аудитории. Обычно рекомендуется 
@@ -294,7 +341,7 @@ render () {
 
             <div className='question-target question' onClick={this.onClickAnswers}>
             Как определить эффективность таргетированной рекламы?
-            <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+            <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
             </div>
             <div className='answer answer-hidden'>
             Для определения эффективности таргетированной рекламы вы можете использовать различные метрики, такие как количество просмотров, 
@@ -304,7 +351,7 @@ render () {
 
             <div className='question-target question' onClick={this.onClickAnswers}>
             Как определить бюджет для таргетированной рекламы?
-            <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+            <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
             </div>
             <div className='answer answer-hidden'>
             Определение бюджета для таргетированной рекламы зависит от ваших целей, конкурентности рынка и ресурсов, которые вы готовы вложить 
@@ -314,7 +361,7 @@ render () {
 
             <div className='question-target question' onClick={this.onClickAnswers}>
             Какие форматы объявлений можно использовать в таргетированной рекламе?
-            <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+            <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
             </div>
             <div className='answer answer-hidden'>
             В таргетированной рекламе вы можете использовать различные форматы объявлений, включая изображения, видео, карусели, слайд-шоу, 
@@ -326,7 +373,7 @@ render () {
 
             <div className='question-design question' onClick={this.onClickAnswers}>
             Что включает в себя процесс разработки дизайна визиток и логотипов?
-            <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+            <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
             </div>
             <div className='answer answer-hidden'>
             Процесс разработки дизайна визиток и логотипов включает в себя несколько этапов. Вначале проводится брифинг, где вы обсуждаете свои 
@@ -336,7 +383,7 @@ render () {
 
             <div className='question-design question' onClick={this.onClickAnswers}>
             Можете ли вы создать дизайн, который будет соответствовать моему бюджету?
-            <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+            <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
             </div>
             <div className='answer answer-hidden'>
             Да, мы готовы работать с различными бюджетами и предлагаем разные пакеты услуг в зависимости от ваших потребностей. Обсудите свой бюджет 
@@ -345,7 +392,7 @@ render () {
 
             <div className='question-design question' onClick={this.onClickAnswers}>
             Что происходит, если мне не нравится предложенный дизайн?
-            <img src='./home/faq-arrow.png' alt='down-arrow' className='faq-down-arrow'></img>
+            <img src='./home/faq-arrow.png' onClick={this.onClickAnswers} alt='down-arrow' className='faq-down-arrow'></img>
             </div>
             <div className='answer answer-hidden'>
             Важно для нас, чтобы вы были полностью удовлетворены результатом. Поэтому мы предоставляем возможность обсудить ваши пожелания и 
@@ -355,7 +402,7 @@ render () {
           </div>
         </div>
         <div className='our-case-home'>
-        <p>Наши проекты</p>
+        <OurProject/>
         <div className='btn-case-home'>
           <div className='btn-develop-case'></div>
           <div className='btn-smm-case'></div>
@@ -367,49 +414,12 @@ render () {
         <div className='item-case-home'></div>
         <div className='item-case-home'></div>
         </div>
-        <div className='reviews-home'>
-        <p>Отзывы наших клиентов</p>
-        <div className='reviews-cards'>
-        <img src='./home/arrow-reviews.png' alt='arrow-left' className='left-arrow-reviews arrow-reviews'></img>
-          <div className='reviews-card-item'>
-            <div className='reviews-card-header'>
-            <img src='./home/reviews1.png' alt='reviews' className='reviesws-card-photo'></img>
-            <div className='reviews-header-text'>MasterDrewno</div>
-            </div>
-            <div className='reviews-card-text'>
-            Я хотел бы поделиться своим впечатлением об услуге создания сайта, предоставленной этой компанией. С самого начала я был 
-            впечатлен профессионализмом и отзывчивостью команды разработчиков. Они были внимательны к моим потребностям и предложили 
-            множество творческих решений для улучшения дизайна и функциональности моего сайта. В целом, я очень доволен результатом и 
-            рекомендую эту компанию всем, кто ищет надежного партнера для создания сайта.
-            </div>
-            <a href='/develop' className='reviews-about-service'>Услуга 'Создание сайта'</a>
-          </div>
-          <div className='reviews-card-item'>
-          <div className='reviews-card-header'>
-            <img src='./home/reviews1.png' alt='reviews' className='reviesws-card-photo'></img>
-            <div className='reviews-header-text'>MasterDrewno</div>
-            </div>
-            <div className='reviews-card-text'>
-            Я хотел бы поделиться своим впечатлением об услуге создания сайта, предоставленной этой компанией. С самого начала я был 
-            впечатлен профессионализмом и отзывчивостью команды разработчиков. Они были внимательны к моим потребностям и предложили 
-            множество творческих решений для улучшения дизайна и функциональности моего сайта. В целом, я очень доволен результатом и 
-            рекомендую эту компанию всем, кто ищет надежного партнера для создания сайта.
-            </div>
-            <a href='/develop' className='reviews-about-service'>Услуга 'Создание сайта'</a>
-          </div>
-          <img src='./home/arrow-reviews.png' alt='arrow-right' className='right-arrow-reviews arrow-reviews'></img>
-        </div>
-        <div className='circle-home-reviews'>
-          <span className='circle-item-reviews active-circle-reviews'></span>
-          <span className='circle-item-reviews'></span>
-          <span className='circle-item-reviews'></span>
-        </div>
-        </div>
+        <Rewiews/>
         <div className='our-tools'>
 
         </div>
       </section>
-      </>
+    </>
   );
 }
 };

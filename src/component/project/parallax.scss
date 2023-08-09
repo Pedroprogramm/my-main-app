@@ -1,0 +1,96 @@
+:root {
+    --mouse-x: 0;
+    --mouse-y: 0;
+  }
+.project-container{
+  perspective: 1000px;
+  // overflow: hidden;
+}
+.project{
+  width: 100%;
+  height: 100%;
+  transform: rotateY(calc(var(--mouse-x) * 0.01)) rotateX(calc(var(--mouse-y) * 0.01));
+  position: relative;
+  will-change: transform;
+  transition: cubic-bezier(0,.59,1,.99);
+  transition-duration: 1s;
+  // overflow: hidden;
+    transform-style: preserve-3d;
+    // clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+}
+.testq{
+  overflow: hidden;
+  width: 47%;
+  height: 51vh;
+}
+  .develop-frst-layer1 {
+    background-image: url(../project/develop-project-frst/layer1.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transform: translateZ(0px) scale(1.05);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+// 
+  .develop-frst-layer2 {
+    background-image: url(../project/develop-project-frst/layer2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 36.792vw;
+    height: 16.782vw;
+    position: absolute;
+    top: 11.831258644536653vh;
+    left: 3vh;
+    transform: translateZ(25px) ;
+  }
+  .blur-circles {
+    position: relative;
+    border-radius: 50%;
+    background-color: rgba(46, 119, 255, 0.195);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.162);
+    transform: translateZ(60px) ;
+  }
+.frst-blur-circle {
+  top: 15.831258644536653vh;
+  left: 72.07192254495159vh;
+  width: 32.57814661134163vh;
+  height: 32.57814661134163vh;
+}
+.sec-blur-circle {
+  top: -27vh;
+  left: 3vh;
+  width: 20vh;
+  height: 20vh;
+  // z-index: 2;
+  transform: translateZ(60px) scale(1.05);
+}
+.scania {
+  background-image: url(../project/develop-project-frst/scania.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 22vh;
+  height: 22vh;
+  left: 15vh;
+  top:  13.831258644536653vh;
+  transform: translateZ(30px) scale(1.05);
+}
+.develop-frst-layer3{
+  background-image: url(../project/develop-project-frst/layer3.png);
+  position: absolute;
+  top: -30vh;
+  left: -18vh;
+  width: 90vh;
+  height: 90vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateZ(120px) ;
+  z-index: 2;
+}

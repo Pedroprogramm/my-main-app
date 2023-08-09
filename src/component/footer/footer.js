@@ -5,6 +5,7 @@ const Footer = () => {
   return (
     <div className='footer-backround'>
       <div className='contact-footer'>
+        <div className='container-number-footer'>
         <div className='contact-pl'>
           <p>PL</p>
           <a className='number-footer' href="tel:+48731323835">+48 731323835
@@ -21,6 +22,7 @@ const Footer = () => {
             <span className='a-border-line'></span>
           </a>
         </div>  
+        </div>
         <div className='see-our-social'>
           <div className='see-instagram-footer button-see-footer'>
             Наш замечательный Instagram
@@ -38,6 +40,7 @@ const Footer = () => {
             <div className='circle-footer-mail circle-footer'></div>
           </div>
         </div>
+        <h3 className='phone-width-text'> КОНТАКТЫ</h3>
       </div> 
         <div className='our-social-footer'></div>
         <div className='copyright'>

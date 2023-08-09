@@ -1,0 +1,43 @@
+:root {
+    --wdth: 20vh;
+}
+.project-container{
+    display: flex;
+}
+.project{
+    width: 44.792vw;
+    height: 25.782vw;
+    border: 1px solid gray;
+}
+.project:nth-child(even){
+    margin-left: auto;
+}
+.load-more{
+    margin: 30px auto;
+    width: var(--wdth);
+    height: 6vh;
+    border-radius: 20px;
+    background-color: gray;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f5;
+}
+.load-more-container{
+    margin: auto;
+    width: var(--wdth);
+}
+.project-names{
+    display: flex;
+}
+.project-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active-project-name{
+    color: blue;
+}

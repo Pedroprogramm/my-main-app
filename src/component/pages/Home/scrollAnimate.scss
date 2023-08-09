@@ -1,0 +1,22 @@
+@keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+.animate-test{
+    animation: opacity 2s 1;
+}
+.animate-services-card{
+    animation: leftAnimation 2s 1;
+}
+@keyframes leftAnimation {
+    0% {
+        transform: translateX(300%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+}

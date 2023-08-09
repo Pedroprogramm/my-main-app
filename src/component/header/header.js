@@ -97,7 +97,7 @@ class Header extends Component {
         // style={menuStyle}
         >
             <a className='logo' href='/'>
-                <img src='logo.svg' alt='logo-project-x'/>
+                <img src='logo111.png' alt='logo-project-x'/>
             </a>
                 <a href='/contact' className='btn header-btn weCallYou'>
                     <div className='static-text-header'>Связаться с нами</div>

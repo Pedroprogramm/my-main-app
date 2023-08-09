@@ -1,0 +1,136 @@
+.reviews-cards{
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 360px;
+}
+.reviews-card-item{
+    width: 40%;
+    box-shadow: 0 0 25px rgb(230, 230, 230);
+    padding: 20px;
+    background-color: white;
+    transition: transform 1s;
+}
+.reviews-home :nth-child(3){
+ z-index: 3;
+}
+.reviews-home :nth-child(4){
+ z-index: 2;
+}
+.reviews-home :nth-child(5){
+ z-index: 1;
+}
+.reviews-card-header{
+    display: flex;
+    
+}
+.reviesws-card-photo{
+    width: 60px;
+    // height: 60px;
+    border-radius: 150px;
+    box-shadow: 0 0 25px rgb(230, 230, 230);
+}
+.reviews-card-text{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.reviews-about-service{
+    color: #050010;
+}
+
+.arrow-reviews{
+    width: 40px;
+    height: 40px;
+    background-image: url(../../../public/home/arrow-reviews.png);
+    background-size: contain;
+    transition-duration: 500ms;
+}
+.-hover{
+    transition-duration: 500ms;
+    background-image: url(../../../public/home/arrow-rewiews-fill.png);
+    cursor: pointer;
+}
+.-hover:hover{
+    background-image: url(../../../public/home/arrow-reviews.png);
+    background-size: contain;
+}
+.left-arrow-reviews{
+    transform: rotate(-180deg);
+}
+.hide-rewiews-item{
+    position: absolute;
+    width: 34%;
+    left: 51%;
+}
+.active-slides{
+    transform: translateX(-104%);
+    transition-duration: 1s;
+}
+.circle-home-reviews{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.circle-item-reviews{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 1px solid black;
+    margin-right: 10px;
+    background-size: 300% 300%;
+    background-position: 0 0;
+}
+.circle-item-reviews:nth-child(1){
+    background-image: linear-gradient(white 50%, #9574FA);
+}
+.circle-item-reviews:nth-child(2){
+    background-image: linear-gradient(white 50%, #FFC10D);
+}
+.circle-item-reviews:nth-child(3){
+    background-image: linear-gradient(white 50%, #00ABA4);
+}
+.circle-item-reviews:nth-child(4){
+    background-image: linear-gradient(white 50%, #FF6471);
+}
+.active-circle-reviews{
+    background-position: 100% 100%;
+}
+@media only screen and (max-width: 500px) {
+    .reviews-cards{
+        margin-top: 50px;
+        height: 300px;
+        position: relative; 
+        overflow: hidden; 
+        max-width: 100%; 
+          
+    }
+    .reviews-card-item{
+        position: absolute;
+        left: 6%;
+        width: 80%;
+        transition: transform 1s;
+        box-shadow: 0 0 10px rgb(230, 230, 230);
+    }
+    .active-slides{
+        transform: translateX(-108%);
+        transition-duration: 1s;
+    }
+    .reviews-cards{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hide-rewiews-item{
+        left: 101%;
+    }
+    .reviews-home :nth-child(3){
+        left: 101%;
+    }
+    .arrow-reviews{
+        display: none;
+    }
+    
+}

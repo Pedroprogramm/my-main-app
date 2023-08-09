@@ -115,3 +115,37 @@
     background-image: url(../../../public/footer/email-black.png);
     background-color: white;
 }
+.phone-width-text{
+    display: none;
+}
+.container-number-footer{
+    display: flex;
+    width: 70%;
+}
+@media only screen and (max-width: 500px) {
+    .contact-footer {
+        flex-direction: column-reverse;
+        align-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+    .phone-width-text{
+        color: white;
+        display: block;
+        margin-bottom: 0;
+        margin-left: 5%;
+    }
+    .circle-footer-social{
+        justify-content: center;
+    }
+    .container-number-footer{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .contact-pl{
+        width:  50%;
+    }
+    .contact-by{
+        width:  50%;
+    }
+}
