@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './project.scss';
 import './parallax.scss';
+import Snowfall from 'react-snowfall'
+
+
+
 
 const OurProject = () => {
   const [nameProject, setNameProject] = useState('Develop');
@@ -43,17 +47,25 @@ const OurProject = () => {
       return (
         <>
           <div className='develop project-container'>
-          <div className='testq'>
+          <div className='parallax'>
             <div className='project'>
-            <div className='develop-frst-layer1 test'></div>
-              <div className='develop-frst-layer2 test'></div>
-              <div className="blur-circles frst-blur-circle test"></div>
-              <div className="blur-circles sec-blur-circle test"></div>
-              <div className='develop-frst-layer3 test'></div>
+            <div className='develop-frst-layer1'></div>
+              <div className='develop-frst-layer2'></div>
+              <div className="blur-circles frst-blur-circle"></div>
+              <div className="blur-circles sec-blur-circle"></div>
+              <div className='develop-frst-layer3'></div>
               <div className='scania'></div>
               </div>
             </div>
-            {/* <div className='project develop-sec'></div> */}
+              <div className='parallax'>
+                <div className='project'>
+                  <div className='develop-sec-layer1 img-props'></div>
+                  <Snowfall />
+                  <div className='develop-sec-layer2 img-props'></div>
+                  <div className='develop-sec-layer3 img-props'></div>
+                  <div className='develop-sec-layer3-btn img-props'></div>
+                </div>
+              </div>
           </div>
         </>
       );

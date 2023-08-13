@@ -2,6 +2,12 @@
     --mouse-x: 0;
     --mouse-y: 0;
   }
+.img-props{
+  background-size: cover;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .project-container{
   perspective: 1000px;
   // overflow: hidden;
@@ -19,10 +25,11 @@
     // clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
 }
-.testq{
+.parallax{
   overflow: hidden;
   width: 47%;
   height: 51vh;
+  max-height: 51vh;
 }
   .develop-frst-layer1 {
     background-image: url(../project/develop-project-frst/layer1.png);
@@ -34,7 +41,6 @@
     transform: translateZ(0px) scale(1.05);
     width: 100%;
     height: 100%;
-    position: absolute;
   }
 // 
   .develop-frst-layer2 {
@@ -50,7 +56,7 @@
     transform: translateZ(25px) ;
   }
   .blur-circles {
-    position: relative;
+    position: absolute;
     border-radius: 50%;
     background-color: rgba(46, 119, 255, 0.195);
     backdrop-filter: blur(5px);
@@ -64,7 +70,7 @@
   height: 32.57814661134163vh;
 }
 .sec-blur-circle {
-  top: -27vh;
+  top: 4vh;
   left: 3vh;
   width: 20vh;
   height: 20vh;
@@ -93,4 +99,37 @@
   background-repeat: no-repeat;
   transform: translateZ(120px) ;
   z-index: 2;
+}
+.develop-sec-layer1{
+  background-image: url(../project/develop-project-sec/layer1.png); 
+    transform: translateZ(0px) scale(1.05);
+    width: 80%;
+    height: 80%;
+    left: 25%;
+    top: 10%;
+}
+.develop-sec-layer2{
+  background-image: url(../project/develop-project-sec/layer2.png);
+  background-position: 15% 50%;
+  // left: -5vh;
+  background-repeat: repeat-y;
+  width: 100%;
+    height: 100%;
+    transform: translateZ(0px) scale(1.05);
+}
+.develop-sec-layer3{
+  background-image: url(../project/develop-project-sec/layer4.png);
+  left: 5vh;
+  top: 10vh;
+  width: 25vh;
+  height: 20vh;
+  transform: translateZ(30px) scale(1.05);
+}
+.develop-sec-layer3-btn{
+  background-image: url(../project/develop-project-sec/layer4-btn.png);
+  left: 3vh;
+  top: 20vh;
+  width: 25vh;
+  height: 20vh;
+  transform: translateZ(30px) scale(1.05);
 }
