@@ -2,6 +2,14 @@
     --mouse-x: 0;
     --mouse-y: 0;
   }
+.gray-preloader{
+  background-color: rgb(218, 218, 218);
+  box-shadow: 0, 0, 10px gray;
+  border-radius: 20px;
+  width: 47%;
+  height: 51vh;
+  max-height: 51vh;
+}
 .img-props{
   background-size: cover;
   position: absolute;
@@ -27,9 +35,16 @@
 }
 .parallax{
   overflow: hidden;
-  width: 47%;
+  width: 48%;
   height: 51vh;
   max-height: 51vh;
+  margin: auto;
+}
+.parallax:first-child{
+  margin-left: 0;
+}
+.parallax:not(:first-child){
+  margin-right: 0;
 }
   .develop-frst-layer1 {
     background-image: url(../project/develop-project-frst/layer1.png);
@@ -102,7 +117,7 @@
 }
 .develop-sec-layer1{
   background-image: url(../project/develop-project-sec/layer1.png); 
-    transform: translateZ(0px) scale(1.05);
+    transform: translateZ(-70px) scale(1.05);
     width: 80%;
     height: 80%;
     left: 25%;
@@ -127,9 +142,50 @@
 }
 .develop-sec-layer3-btn{
   background-image: url(../project/develop-project-sec/layer4-btn.png);
-  left: 3vh;
-  top: 20vh;
-  width: 25vh;
-  height: 20vh;
+  left: 7vh;
+  top: 30vh;
+  width: 16vh;
+  height: 5vh;
   transform: translateZ(30px) scale(1.05);
+}
+.develop-sec-blur{
+    position: absolute;
+    border-radius: 50%;
+    background-color: #eab0587a;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+  0px 0px 20px #eab058,
+  0px 0px 20px #eab058,
+  0px 0px 20px #eab058;
+    transform: translateZ(10px) ;
+}
+.circle-blur-1{
+  top: 40vh;
+  left: 22vh;
+  width: 1.5vh;
+  height: 1.5vh;
+}
+.circle-blur-2{
+  top: 27vh;
+  left: 14vh;
+  width: 0.9vh;
+  height: 0.9vh;
+}
+.circle-blur-3{
+  top: 34vh;
+  left: 9vh;
+  width: 2vh;
+  height: 2vh;
+}
+.circle-blur-4{
+  top: 20vh;
+  left: 16vh;
+  width: 1.1vh;
+  height: 1.1vh;
+}
+.circle-blur-5{
+  top: 12vh;
+  left: 6vh;
+  width: 2vh;
+  height: 2vh;
 }

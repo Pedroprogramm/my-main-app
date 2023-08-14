@@ -4,11 +4,7 @@
 .project-container{
     display: flex;
 }
-.project{
-    width: 44.792vw;
-    height: 25.782vw;
-    border: 1px solid gray;
-}
+
 .project:nth-child(even){
     margin-left: auto;
 }
@@ -32,12 +28,64 @@
 }
 .project-names{
     display: flex;
+    margin-bottom: 3vh;
+    margin-top: 1vh;
 }
 .project-header{
+    font-family: MullerMedium;
+    font-size: 25px;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
+    margin-bottom: 2vh;
 }
 .active-project-name{
-    color: blue;
+    color: #2501ff;
+}
+.project-name{
+    font-family: MullerMedium;
+    cursor: pointer;
+    font-size: 18px;
+}
+.project-name:hover{
+    color: #2501ff;
+}
+.project-name:not(:first-child){
+    margin-left: 7vh;
+}
+.underline-one {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+.underline-one:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: #2501ff; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.4s; /* Время эффекта */
+}
+.underline-one:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: #2501ff; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.4s;  /* Время эффекта */
+}
+.active-check{
+    position: relative;
+    top: 2vh;
+    opacity: 0;
+    color: #2501ff;
+}
+.active-project-name + .active-check{
+    opacity: 1;
 }
