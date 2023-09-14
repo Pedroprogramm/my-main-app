@@ -1,30 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import './project.scss';
 import './parallax.scss';
-import Snowfall from 'react-snowfall'
+import throttle from 'lodash/throttle';
+// import MainComponent from './set-main';
 
-
-
+const MainComponent = lazy(() => import('./set-main'));
 
 const OurProject = () => {
   const [nameProject, setNameProject] = useState('Develop'),
-  [resourcesLoaded, setResourcesLoaded] = useState(false),
+  [resourcesLoaded, setResourcesLoaded] = useState(true),
   [allProject, setAllProject] = useState(false);
 
 
-  const updateMousePosition = (e) => {
-      const y = e.clientY - (window.innerHeight * 0.5) ,
-      x = e.clientX - (window.innerWidth * 0.5) ;
-      // console.log(x, y);
-      document.documentElement.style.setProperty('--mouse-x', (`${x}deg`) );
-      document.documentElement.style.setProperty('--mouse-y', (`${y}deg`));
-  }
+  const updateMousePosition = throttle((e) => {
+    const y = e.clientY - (window.innerHeight * 0.5),
+      x = e.clientX - (window.innerWidth * 0.5);
+      const develop = document.querySelector('.develop')
+      if (develop) {
+      const projectElements = develop.querySelectorAll('.project');
+    
+    projectElements.forEach((item) => {
+      item.style.transform = `rotateY(${x * 0.01}deg) rotateX(${y * 0.01}deg)`;
+    })};
+  }, 20);
 
   useEffect(() => {
-      setResourcesLoaded(true);
-  }, []);
+      // async
+  }, []); 
   
-
   useEffect(() => {
     window.addEventListener('mousemove', updateMousePosition);
     const updateProject = () => {
@@ -47,49 +50,6 @@ const OurProject = () => {
 
   const onLoadProject = () => {
     setAllProject(true);
-  };
-
-  const setMain = () => {
-    if (nameProject === 'Develop') {
-      return (
-        <>
-          <div className='develop project-container'>
-          <div className='parallax'>
-            <div className='project'>
-            <div className='develop-frst-layer1'></div>
-              <div className='develop-frst-layer2'></div>
-              <div className="blur-circles frst-blur-circle"></div>
-              <div className="blur-circles sec-blur-circle"></div>
-              <div className='develop-frst-layer3'></div>
-              <div className='scania'></div>
-              </div>
-            </div>
-              <div className='parallax'>
-                <div className='project'>
-                  <div className='develop-sec-layer1 img-props'></div>
-                  <Snowfall />
-                  <div className='develop-sec-layer2 img-props'></div>
-                  <div className='develop-sec-blur circle-blur-1'></div>
-                  <div className='develop-sec-blur circle-blur-2'></div>
-                  <div className='develop-sec-blur circle-blur-3'></div>
-                  <div className='develop-sec-blur circle-blur-4'></div>
-                  <div className='develop-sec-blur circle-blur-5'></div>
-                  <div className='develop-sec-layer3 img-props'></div>
-                  <div className='develop-sec-layer3-btn img-props'></div>
-                </div>
-              </div>
-          </div>
-          { allProject ? <h1> ALLALLALL</h1> : 
-          <div className='load-more-container'>
-            <div onClick={onLoadProject} className='load-more'>
-              больше проектов
-            </div>
-          </div>  }
-        </>
-      ) ;
-    } else {
-      return <h1>{nameProject}</h1>;
-    }
   };
 
   return (
@@ -122,11 +82,9 @@ const OurProject = () => {
           </svg>
       </div>
       <div className='project-main'>
-        {/* {setMain()} */}
-    {resourcesLoaded ? setMain() : <div style={{ display: 'flex' }}>
-      <div className='gray-preloader'></div>
-      <div className='gray-preloader'></div>
-    </div>}
+      <Suspense fallback={<div>Loading...</div>}>
+          <MainComponent nameProject={nameProject} allProject={allProject} onLoadProject={onLoadProject} />
+        </Suspense>
       </div>
     </div>
   );

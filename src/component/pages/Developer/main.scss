@@ -113,6 +113,30 @@ main{
     background-position: 100% 0%;
     transition-duration: 600ms;
 }
+.rocket-stages{
+    background-image: url(./startup.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+}
+.active-rocket{
+    animation: testing 1s linear forwards;
+    position: relative;
+}
+@keyframes testing {
+    0% {
+        left: 0;
+        top: 0;
+    }
+    50% {
+        left: 75px;
+    }
+    100% {
+        left: 100px;
+        top: 100px;
+    }
+}
 .back-cards:hover {
     // background-image: linear-gradient(45deg,#79D99B 50%,gray 0);
     // background-image: linear-gradient(45deg,gray);

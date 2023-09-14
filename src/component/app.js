@@ -35,12 +35,22 @@ componentDidMount() {
         localStorage.setItem('isAnimationShown', 'true');
       }, 6000);
     });
+  };
+  const savedScrollPosition = localStorage.getItem('scrollPosition');
+  if (savedScrollPosition === null) {
+    localStorage.setItem('scrollPosition', window.pageYOffset);
+  } else {
+    window.scrollTo(0, parseInt(savedScrollPosition));
   }
+  
 }
 
 componentDidUpdate() {
   localStorage.setItem('scrollPosition', window.pageYOffset);
-  console.log(window.pageYOffset)
+}
+
+componentWillUnmount() {
+
 }
 
  renderPage() {

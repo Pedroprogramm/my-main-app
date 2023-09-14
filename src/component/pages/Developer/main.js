@@ -3,6 +3,7 @@ import { Component} from 'react';
 import './main.scss';
 import CardsCarousel from './cards-carousel/cards-carousel';
 import CallUs from './call-us/callUs';
+import Stages from '../stage-our-work/stage-our-work';
 // import FirstSite from './Site1/reactComponent';
 
 
@@ -44,6 +45,7 @@ class Main extends Component {
             }
     }
 
+    
     // onOurProjectE(e) {
     //     if (e.target.classList.contains('rewriting-card') || e.target.classList.contains('item-cards-service')){
     //         const card = document.querySelector('.item-cards-service');
@@ -83,6 +85,7 @@ class Main extends Component {
                 </div>
             </div>
             <CardsCarousel/>
+            <Stages/>
             <CallUs/>
                 <div className='h-center'>
                     <h2>Какие сайты мы разрабатываем</h2>

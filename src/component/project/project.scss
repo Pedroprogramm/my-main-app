@@ -1,26 +1,26 @@
 :root {
-    --wdth: 20vh;
+    --wdth: 25vh;
 }
 .project-container{
     display: flex;
 }
-
+.text-project{
+    box-shadow: 0px 1px 2px rgb(230, 230, 230);
+    padding-bottom: 1px;
+  }
+  .name-project{
+    font-size: 18px;
+    font-weight: 450;
+    margin-bottom: 0;
+  }
+  .description-project{
+    font-size: 16px;
+    font-weight: 350;
+    margin-top: 7px;
+    margin-bottom: 4px;
+  }
 .project:nth-child(even){
     margin-left: auto;
-}
-.load-more{
-    margin: 30px auto;
-    width: var(--wdth);
-    height: 6vh;
-    border-radius: 20px;
-    background-color: gray;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: center;
-    align-items: center;
-    background-color: #f6f6f5;
 }
 .load-more-container{
     margin: auto;
@@ -89,3 +89,48 @@
 .active-project-name + .active-check{
     opacity: 1;
 }
+.btn-ripple {
+    color: #000000;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 30px auto;
+    width: var(--wdth);
+    height: 9vh;
+    border-radius: 20px;
+    background-color: #f6f6f5;
+    cursor: pointer;
+    margin: 1rem auto;
+    text-align: center;
+    text-decoration: none;
+    line-height: 8.5vh;
+  }
+  .btn-ripple span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #00ffae;
+    -webkit-transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .btn-ripple a {
+    z-index: 2;
+    color: #000000;
+    font-size: 15px;
+    position: relative;
+  }
+  .btn-ripple:hover {
+    color: #eee;
+  }
+  .btn-ripple:hover span {
+    width: 225%;
+    height: 562.5px;
+  }
+  .btn-ripple:active {
+    background-color: #00c4ad;
+  }

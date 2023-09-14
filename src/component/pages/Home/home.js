@@ -17,15 +17,15 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.updateAnswers();
+    // this.updateAnswers();
     window.addEventListener('scroll', this.animateServices);
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.animateServices);
   }
-  componentDidUpdate() {
-    this.updateAnswers();
-  }
+  // componentDidUpdate() {
+  //   this.updateAnswers();
+  // }
 
   animateServices() {
     const scroll = window.pageYOffset
@@ -44,7 +44,7 @@ class Home extends Component {
         }
       })
     }
-    console.log(scroll)
+    // console.log(scroll)
   }
 
   // updateOpacity() {
@@ -53,58 +53,58 @@ class Home extends Component {
   //   // setTimeout sqare.style.opacity = 0;
   // }
 
-  updateAnswers() {
-    const hiddenAnswer = document.querySelectorAll('.answer-hidden');
-    // const showAnswers = document.querySelector('.show-answers');
-    if (hiddenAnswer.length === 0) {
-      this.setState(() => ({
-        isExpanded: true, // Инвертируем значение состояния
-      }));
-    } 
-    // else if (hiddenAnswer.length > 0){
-    //   this.setState(() => ({
-    //     isExpanded: false, // Инвертируем значение состояния
-    //   }));
-    // }
-    // console.log('1');
-  }
+  // updateAnswers() {
+  //   const hiddenAnswer = document.querySelectorAll('.answer-hidden');
+  //   // const showAnswers = document.querySelector('.show-answers');
+  //   if (hiddenAnswer.length === 0) {
+  //     this.setState(() => ({
+  //       isExpanded: true, // Инвертируем значение состояния
+  //     }));
+  //   } 
+  //   // else if (hiddenAnswer.length > 0){
+  //   //   this.setState(() => ({
+  //   //     isExpanded: false, // Инвертируем значение состояния
+  //   //   }));
+  //   // }
+  //   // console.log('1');
+  // }
 
   
 
-  onClickAnswers (e) {
-    const quest = document.querySelectorAll('.question');
-    const answer = document.querySelectorAll('.answer'),
-    arrow = document.querySelectorAll('.faq-down-arrow');
-    function answerSearch (item) {
-      item.forEach((item, index) => {
-        if (item === e.target) {
-          arrow[index].classList.toggle('faq-arrow-active');
-          answer[index].classList.toggle('answer-hidden')
-          console.log(index)
-        }
-      })
-     }
-    if(e.target.classList.contains('question')){
-      answerSearch(quest);
-    } else if(e.target.classList.contains('faq-down-arrow')) {
-      answerSearch(arrow)
-    }
+  // onClickAnswers (e) {
+  //   const quest = document.querySelectorAll('.question');
+  //   const answer = document.querySelectorAll('.answer'),
+  //   arrow = document.querySelectorAll('.faq-down-arrow');
+  //   function answerSearch (item) {
+  //     item.forEach((item, index) => {
+  //       if (item === e.target) {
+  //         arrow[index].classList.toggle('faq-arrow-active');
+  //         answer[index].classList.toggle('answer-hidden')
+  //         console.log(index)
+  //       }
+  //     })
+  //    }
+  //   if(e.target.classList.contains('question')){
+  //     answerSearch(quest);
+  //   } else if(e.target.classList.contains('faq-down-arrow')) {
+  //     answerSearch(arrow)
+  //   }
     
-  }
+  // }
 
-  onVisHiddAnswer () {
-    const allAnswer = document.querySelectorAll('.answer'),
-    hiddenAnswer = document.querySelectorAll('.answer-hidden');
-    const showAnswers = document.querySelector('.show-answers');
-    allAnswer.forEach(item => {
-      item.classList.toggle('answer-hidden');
-    })
-    if (hiddenAnswer.length === 0) {
-      showAnswers.innerHTML = 'Развернуть все ответы';
-    } else {
-      showAnswers.innerHTML = 'Свернуть все ответы';
-    }
-  }
+  // onVisHiddAnswer () {
+  //   const allAnswer = document.querySelectorAll('.answer'),
+  //   hiddenAnswer = document.querySelectorAll('.answer-hidden');
+  //   const showAnswers = document.querySelector('.show-answers');
+  //   allAnswer.forEach(item => {
+  //     item.classList.toggle('answer-hidden');
+  //   })
+  //   if (hiddenAnswer.length === 0) {
+  //     showAnswers.innerHTML = 'Развернуть все ответы';
+  //   } else {
+  //     showAnswers.innerHTML = 'Свернуть все ответы';
+  //   }
+  // }
 
 render () {
   return (
@@ -112,7 +112,11 @@ render () {
       <div className='purple-back'></div>
       <div className='black-square animate-test'>
         <div className='header-text-square'>
-          <strong>Добейтесь большего успеха: продвигайте свой бизнес в интернете с профессионалами</strong>
+          {/* <strong>Добейтесь большего успеха: продвигайте свой бизнес в интернете с профессионалами</strong> */}
+      <video className='head-home-video' autoPlay muted width='100%' height='100%'>
+        <source src='/home/header-text-animation.webm' type='video/webm' />
+      </video>
+      <div className='watermark'></div>
         </div>
         <div className='text-square'>
         Мы - команда экспертов в цифровом маркетинге, помогаем компаниям повысить узнаваемость бренда, увеличить продажи и 
@@ -268,7 +272,7 @@ render () {
       <CallUs/>
       <section className='container'>
         <div className='faq'>
-          <div className='header-faq'>
+          {/* <div className='header-faq'>
             <p className='faq-header'><strong>FAQ</strong></p>
             <div className='show-answers' onClick={this.onVisHiddAnswer}> {this.state.isExpanded ? 'Свернуть все ответы' : 'Развернуть все ответы'}</div>
           </div>
@@ -399,7 +403,21 @@ render () {
             предложения, чтобы внести необходимые изменения и доработки до того, как вы будете довольны окончательным результатом.
             </div>
             </div>
+          </div> */}
+          <div className='faq-contain faq-develop'>
+          <span>
+            <div className='giffs-develop'></div>
+            <ul className='questions-develop'>
+              <li className='quesion-develop-frst'>31231</li>
+              <li className='quesion-develop-sec'>23313</li>
+              <li className='quesion-develop-third'>1321312</li>
+            </ul>
+            </span>
+            <div className='answer-develop'></div>
           </div>
+          <div className='faq-contain faq-develop'></div>
+          <div className='faq-contain faq-develop'></div>
+          {/* <div className='faq-contain faq-develop'></div> */}
         </div>
         <div className='our-case-home'>
         <OurProject/>
